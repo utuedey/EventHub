@@ -1,7 +1,8 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 class Location(models.Model):
@@ -26,17 +27,21 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+
+    organizer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name='events', null=True)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='events')
+    
     date_time = models.DateTimeField()
-    organizer = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    tags = models.ManyToManyField(Tag)
+    ticket_price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='event_images/', blank=True, null=True)
     capacity = models.PositiveIntegerField()
     registration_deadline = models.DateTimeField()
+    tags = models.ManyToManyField(Tag, related_name='events')
 
     def __str__(self):
         return self.title
@@ -50,10 +55,22 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+class Payment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey('Event', on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_intent_id = models.CharField(max_length=255, unique=True)
+    payment_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Payment for {self.event} by {self.user}"
+
+
 class Ticket(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ticket_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, verbose_name=_('Ticket Number'))
+    payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)
     is_valid = models.BooleanField(default=True)
 

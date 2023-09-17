@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from decouple import config
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
     # Local Apps
     'apps.users.apps.UsersConfig',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static/',]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATICFILES_DIRS = [BASE_DIR/'static/',]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -132,3 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# pip install stripe
+# STRIPE_API_KEY = 'your_stripe_api_key'
+# STRIPE_PUBLIC_KEY = 'your_stripe_public_key'
