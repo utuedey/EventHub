@@ -18,7 +18,7 @@ def generate_pdf_ticket(ticket):
     # Create a PDF document
     p = canvas.Canvas(response, pagesize=letter)
     p.drawString(100, 750, f"Ticket Number: {ticket.ticket_number}")
-    # Add more ticket details as needed
+    # We will add more ticket details as needed
 
     # Save the PDF
     p.save()
@@ -69,35 +69,35 @@ class EventRegistrationView(View):
 
         return redirect('event-detail', pk=event_id)
 
+# THIS VIEW WILL BE USED, IT WILL REPLACE THE ABOVE VIEW, THE ABOVE VIEW IS FOR INITIAL TESTING
+# @method_decorator(login_required, name='dispatch')
+# class EventRegistrationView(View):
+#     def post(self, request, event_id):
+#         event = Event.objects.get(pk=event_id)
+#         user = request.user
+#         ticket_price = event.price
 
-@method_decorator(login_required, name='dispatch')
-class EventRegistrationView(View):
-    def post(self, request, event_id):
-        event = Event.objects.get(pk=event_id)
-        user = request.user
-        ticket_price = event.price
+#         # Create a payment intent with Stripe
+#         try:
+#             stripe.api_key = settings.STRIPE_API_KEY
+#             payment_intent = stripe.PaymentIntent.create(
+#                 amount=int(ticket_price * 100),  # Amount in cents
+#                 currency='usd',
+#             )
 
-        # Create a payment intent with Stripe
-        try:
-            stripe.api_key = settings.STRIPE_API_KEY
-            payment_intent = stripe.PaymentIntent.create(
-                amount=int(ticket_price * 100),  # Amount in cents
-                currency='usd',
-            )
+#             # Create a payment record
+#             payment = Payment.objects.create(
+#                 event=event,
+#                 user=user,
+#                 amount=ticket_price,
+#                 payment_intent_id=payment_intent.id,
+#             )
+#             payment.save()
 
-            # Create a payment record
-            payment = Payment.objects.create(
-                event=event,
-                user=user,
-                amount=ticket_price,
-                payment_intent_id=payment_intent.id,
-            )
-            payment.save()
+#             return JsonResponse({'client_secret': payment_intent.client_secret})
 
-            return JsonResponse({'client_secret': payment_intent.client_secret})
-
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
+#         except Exception as e:
+#             return JsonResponse({'error': str(e)}, status=400)
 
 
 
