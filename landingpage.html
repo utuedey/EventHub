@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>landing page</title>
+        <style>
+            body {
+                background-image: url("images/event large-ballroom-with-large-chandelier-flowers-table.jpg");
+                margin: 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+            }
+            
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: -1
+            }
+            .theeventhub, .homebutton, .aboutbutton, .contactbutton, .herosection, .herosection1, .startbutton {
+                color: #ffffff; 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }   
+            .theeventhub {
+                font-family: 'Bahnschrift Condensed';
+                font-size: 25px;
+                font-weight: bold;
+                display: inline-block;
+                margin-right: 200px;
+                color: whitesmoke;
+                margin-left: 20px;
+            }
+            .homebutton, .aboutbutton, .contactbutton, .signinbutton {
+                color: white;
+                margin-right: 20px;
+                font-family: Arial;
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                font-family: 'Bahnschrift Condensed';
+                font-size: 20px;
+                
+            }
+            .homebutton:hover, .aboutbutton:hover, .contactbutton:hover, .signinbutton:hover { 
+                color: #2196F3; 
+                transform: scale(1.05);
+                font-size: 25px;
+            }
+            
+            .buttonbox {
+                position: absolute;
+                right: 20px;
+            }
+            .header {
+                display: flex;
+                flex: 1 1;
+                position: relative;
+                align-items: center;
+                margin-bottom: 90px;
+            }
+            
+            .herosection {
+                font-family: 'Bahnschrift Condensed';
+                font-size: 60px;
+                color: white;
+                margin-bottom: 0;
+                
+            }
+            .herosection1 {
+                font-family: Arial;
+                font-size: 14px;
+                color: white;
+                margin-bottom: 20px;
+                margin-top: 0;
+                font-weight: 700;
+            }
+            .startbutton {
+                color: white;
+                background-color: #2196F3;
+                padding: 10px 40px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+            .startbutton:hover{
+                color: black; 
+                transform: scale(1.05);
+                
+            }
+            .secondbox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin-top: 50px;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <p class="theeventhub">Event Hub</p>
+            <div class="buttonbox">
+                <button class="homebutton">Home</button>
+                <button class="aboutbutton">About</button>
+                <button class="contactbutton">Contact</button>
+                <button class="signinbutton">Sign In</button>
+            </div>
+        </div>
+            <div class="secondbox">
+                <p class="herosection">Revolutionize<br>Event Planning<br>with Event Hub</p>
+                <p class="herosection1">Your All-in-One Solution</p>
+                <button class="startbutton">Get Started</button>
+            </div>
+    </body>
+</html> 
