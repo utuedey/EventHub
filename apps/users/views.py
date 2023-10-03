@@ -12,14 +12,14 @@ from apps.users.forms import CustomUserCreationForm
 def dashboard(request):
     """A sample dashboard to use the authentication system
     """
-    return render(request, 'users/dashboard.html')
+    return render(request, 'event_hub/index.html')
 
 def register(request):
     """Handles registration form request
     """
     if request.method == "GET":
         return render(
-            request, "users/register.html",
+            request, "registration/signup.html", # change template from register.html
             {'form': CustomUserCreationForm}
         )
     elif request.method == "POST":

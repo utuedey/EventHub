@@ -1,6 +1,6 @@
 from django.conf import settings
 import stripe
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views import View
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView, ListView, DetailView
@@ -24,18 +24,37 @@ def generate_pdf_ticket(ticket):
     p.save()
     return response
 
+def rent_venue(request):
+    """View to add rent a venue"""
+    return render(request, 'event_hub/rent-venue.html')
+
+def purchase_ticket(request):
+    """View to purchase ticket"""
+    return render(request, 'event_hub/tickets.html')
+
+def ticket_detail(request):
+    """View to purchase ticket"""
+    return render(request, 'event_hub/ticket-details.html')
+
+def about(request):
+    """the about page view"""
+    return render(request, 'event_hub/about.html')
+
+def contact_page(request):
+    """the contact page view"""
+    return render(request, 'event_hub/contact.html')
 
 class EventListView(ListView):
     """View to display a list of events"""
     model = Event
-    template_name = 'event_list.html'
+    template_name = 'event_hub/event_list.html'
     context_object_name = 'events'
 
 
 class EventDetailView(DetailView):
     """View to display the details of an event"""
     model = Event
-    template_name = 'event_detail.html'
+    template_name = 'eventhub/event-details.html'
     context_object_name = 'event'
 
 

@@ -1,9 +1,20 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
-    path('events/', views.EventListView.as_view(), name='event-list'),
-    path('events/<int:pk>/', views.EventDetailView.as_view(), name='event-detail'),
+    path('show-events/', views.EventListView.as_view(), name='event-list'),
+    # rent venue url
+    path('rent-venue/', views.rent_venue, name='rent-venue'),
+    # purchase ticket url
+    path('tickets/', views.purchase_ticket, name='ticket'),
+    # ticket_details url
+    path('ticket_details/', views.ticket_detail, name='ticket-detail'),
+    # about page url
+    path('about/', views.about, name='about'),
+    # contact page url 
+    path('contact/', views.contact_page, name='contact'),
+    path('event-detail/', views.EventDetailView.as_view(), name='event-detail'), # event-detail/<int:pk>/
     path('profile/', views.UserProfileView.as_view(), name='user-profile'),
     path('events/<int:event_id>/register/', views.EventRegistrationView.as_view(), name='event-registration'),
     path('events/<int:event_id>/unregister/', views.EventUnregistrationView.as_view(), name='event-unregistration'),
