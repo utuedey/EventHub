@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}EventHub|Events{% endblock %}
+
+{% block content %}
+
+<h2>Events List</h2>
+
+<section>
+    <ul>
+    {% for event in events %}
+        <li>{{ event.title }}</li>
+    {% empty %}
+        <li>No events yet.</li>
+    {% endfor %}
+   </ul>
+</section>
+
+{% endblock %}
