@@ -28,7 +28,7 @@ def generate_pdf_ticket(ticket):
 class EventListView(ListView):
     """View to display a list of events"""
     model = Event
-    template_name = 'event_list.html'
+    template_name = 'event_hub/event_list.html'
     context_object_name = 'events'
 
 
