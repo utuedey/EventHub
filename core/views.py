@@ -15,7 +15,10 @@ from .serializers import (
 )
 
 class HomeView(TemplateView):
-    template_name = 'core/landingpage.html' #'event_hub/index.html'
+    template_name = 'core/homepage.html'
+
+class EventDetailView(TemplateView):
+    template_name = 'core/event_datail.html'
 
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()

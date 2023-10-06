@@ -13,6 +13,7 @@ from .views import (
     HomeView,
     AboutView,
     ContactView,
+    EventDetailView
 )
 
 # Create a SimpleRouter for the main resources
@@ -32,6 +33,7 @@ router_urls = router.urls + event_router.urls
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    path('events/<int:pk>/', EventDetailView.as_view(), name='event-detail'),
     path('api/', include(router_urls)),
     path('events/<int:event_id>/registration/', EventRegistrationView.as_view(), name='event-registration'),
     path('events/<int:event_id>/deregistration/', EventDeregistrationView.as_view(), name='event-deregistration'),

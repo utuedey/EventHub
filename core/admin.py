@@ -14,8 +14,8 @@ from .models import Event, Category, Location, Payment, Tag, Ticket
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     """Admin View for Location"""
-    list_display = ['name', 'address', 'latitude', 'longitude']
-    search_fields = ['name', 'address']
+    list_display = ['city', 'state', 'address', 'latitude', 'longitude']
+    search_fields = ['city', 'address']
 
 
 @admin.register(Event)
