@@ -46,6 +46,12 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def ticket_available(self):
+        # Calculate the number of available tickets based on capacity and registered tickets
+        registered_tickets = Ticket.objects.filter(event=self).count()
+        return self.capacity - registered_tickets
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to='profile_images/', blank=True, null=True)
