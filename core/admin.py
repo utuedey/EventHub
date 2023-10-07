@@ -66,3 +66,4 @@ class TicketAdmin(admin.ModelAdmin):
     list_display = ['ticket_number', 'event', 'user', 'purchase_date']
     list_filter = ['event']
     search_fields = ['ticket_number', 'event__title', 'user__username']
+
