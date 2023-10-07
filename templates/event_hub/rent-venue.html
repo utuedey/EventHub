@@ -308,8 +308,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="address">
-                        <h4>Sunny Hill Festival Address</h4>
-                        <span>5 College St NW, <br>Norcross, GA 30071<br>United States</span>
+                        <h4>EventHub Festival Address</h4>
+                        <span>Funso Williams Avenue, Lagos<br>Eventhub Africa<br>Nigeria</span>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -337,10 +337,10 @@
                 <div class="col-lg-12">
                     <div class="under-footer">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <p>São Conrado, Rio de Janeiro</p>
+                            <div class="col-lg-6 col-sm-6">
+                                <p>EventHub Africa, Lagos City</p>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-sm-6">
                                 <p class="copyright">Copyright 2023 EventHub Company 
                     
                     			<br>Design: <a rel="nofollow" href="https://www.github.com/utuedey/eventhub" target="_parent">EventHub</a></p>
@@ -352,16 +352,16 @@
                     <div class="sub-footer">
                         <div class="row">
                             <div class="col-lg-3">
-                                <div class="logo"><span>Art<em>Xibition</em></span></div>
+                                <div class="logo"><span>Event<em>Hub</em></span></div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="menu">
                                     <ul>
-                                        <li><a href="index.html" class="active">Home</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="rent-venue.html">Rent Venue</a></li>
-                                        <li><a href="shows-events.html">Shows & Events</a></li> 
-                                        <li><a href="tickets.html">Tickets</a></li> 
+                                        <li><a href="{% url 'users:dashboard' %}" class="active">Home</a></li>
+                                        <li><a href="{% url 'about' %}">About Us</a></li>
+                                        <li><a href="{% url 'rent-venue' %}">Rent Venue</a></li>
+                                        <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
+                                        <li><a href="{% url 'ticket' %}">Tickets</a></li> 
                                     </ul>
                                 </div>
                             </div>
