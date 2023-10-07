@@ -14,6 +14,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     # contact page url 
     path('contact/', views.contact_page, name='contact'),
+    # event registration url
+    path('register_event/', views.add_event, name='add-event'),
     path('event-detail/', views.EventDetailView.as_view(), name='event-detail'), # event-detail/<int:pk>/
     path('profile/', views.UserProfileView.as_view(), name='user-profile'),
     path('events/<int:event_id>/register/', views.EventRegistrationView.as_view(), name='event-registration'),

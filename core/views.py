@@ -2,7 +2,7 @@ from django.conf import settings
 import stripe
 from django.shortcuts import redirect, render
 from django.views import View
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -10,6 +10,8 @@ from .models import Category, Event, Payment, UserProfile, Ticket
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
+# Add event
+from .forms import AddEventForm
 
 def generate_pdf_ticket(ticket):
     response = HttpResponse(content_type='application/pdf')
@@ -43,6 +45,16 @@ def about(request):
 def contact_page(request):
     """the contact page view"""
     return render(request, 'event_hub/contact.html')
+
+def add_event(request):
+    if request.method == 'POST':
+        form = AddEventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/ticket/")
+    else:
+         form = AddEventForm()
+    return render(request, 'add_event.html', {'form': form})
 
 class EventListView(ListView):
     """View to display a list of events"""
