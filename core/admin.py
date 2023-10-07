@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models.aggregates import Count
 from django.urls import reverse
 from django.utils.html import format_html
 from .models import Event, Category, Location, Payment, Tag, Ticket
@@ -20,23 +21,22 @@ class LocationAdmin(admin.ModelAdmin):
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     """Admin View for Event"""
-    list_display = ['event_title_link', 'description', 'category', 'ticket_price', 'registered_tickets_count']
+    list_display = ['title', 'description', 'category', 'ticket_price', 'registered_tickets_count']
     list_filter = ['category']
     search_fields = ['title', 'description']
     # inlines = [TagInline]
 
-    def registered_tickets_count(self, obj):
-        return obj.ticket_set.count()
-    
-    registered_tickets_count.short_description = 'Registered Tickets'
 
-    def event_title_link(self, obj):
+    @admin.display(ordering='registered_tickets_count')
+    def registered_tickets_count(self, obj):
         url = reverse('admin:core_ticket_changelist')
         url += f'?event__id__exact={obj.id}'
-        return format_html('<a href="{}">{}</a>', url, obj.title)
-
-    event_title_link.short_description = 'Event Title'
-
+        return format_html('<a href="{}">{}</a>', url, obj.registered_tickets_count)
+    
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(
+            registered_tickets_count=Count('ticket')
+        )
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

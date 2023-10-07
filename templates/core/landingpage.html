@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to EventHub</title>
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <!-- Add any additional stylesheets or libraries here -->
+</head>
+
+<body>
+    <header id="hero">            
+            <nav class="overlay">
+                <div class="logo">
+                    <img src="your-logo.png" alt="EventHub Logo">
+                </div>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                    <button class="get-started-login-button">Home</button>
+                {% else %}
+                    <button class="get-started-login-button">Get Started</button>
+                {% endif %}
+            </nav>
+        <div class="hero-content">
+            <h1>Welcome to EventHub</h1>
+            <p>Your Premier Event Experience</p>
+        </div>
+        {% if user.is_authenticated %}
+            <button class="get-started-button">Schedule an Event</button>
+        {% else %}
+            <button class="get-started-button">Get Started</button>
+        {% endif %}
+    </header>
+
+    <section id="events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="event-list" id="event-list">
+                <!-- Dynamic event cards go here -->
+            </div>
+            <a href="/core/api/events" class="cta-button">View All Events</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 EventHub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

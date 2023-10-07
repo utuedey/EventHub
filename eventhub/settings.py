@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     # 3rd Party App
     'django_extensions',
-
+    'rest_framework',
     # Local Apps
     'apps.users.apps.UsersConfig',
     'core',
@@ -141,6 +141,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# REST_FRAMEWORK = {
+#     # 'DEFAULT_RENDERER_CLASSES': [
+#     #     'rest_framework.renderers.JSONRenderer',
+#     # ],
+#     'DEFAULT_PARSER_CLASSES': [
+#         'rest_framework.parsers.JSONParser',
+#     ],
+# }
+
 
 # pip install stripe
 # STRIPE_API_KEY = 'your_stripe_api_key'
