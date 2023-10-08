@@ -68,9 +68,9 @@
                         <ul class="nav">
                             <li><a href="{% url 'users:dashboard' %}">Home</a></li>
                             <li><a href="{% url 'about' %}">About Us</a></li>
-                            <li><a href="{% url 'rent-venue' %}">Rent Venue</a></li>
-                            <li><a href="{% url 'event-list' %}" class="active">Shows & Events</a></li> 
-                            <li><a href="{% url 'ticket' %}">Tickets</a></li> 
+                            <li><a href="{ url 'rent-venue' }">Rent Venue</a></li>
+                            <li><a href="{% url 'home' %}" class="active">Shows & Events</a></li> 
+                            <li><a href="{% url 'ticket-list' %}">Tickets</a></li> 
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -103,7 +103,7 @@
                         <h2>Event Listing</h2>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12" id="ticket-list">
                     <ul>
                         <li>
                             <div class="row">
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="main-dark-button">
-                                        <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                        <a href="{url 'ticket-detail' }">Purchase Tickets</a>
                                     </div>
                                 </div>
                             </div>
@@ -332,9 +332,9 @@
                                     <ul>
                                         <li><a href="{% url 'users:dashboard' %}" class="active">Home</a></li>
                                         <li><a href="{% url 'about' %}">About Us</a></li>
-                                        <li><a href="{% url 'rent-venue' %}">Rent Venue</a></li>
-                                        <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
-                                        <li><a href="{% url 'ticket' %}">Tickets</a></li> 
+                                        <li><a href="{ url 'rent-venue' }">Rent Venue</a></li>
+                                        <li><a href="{ url 'event-list' }">Shows & Events</a></li> 
+                                        <li><a href="{ url 'ticket' }">Tickets</a></li> 
                                     </ul>
                                 </div>
                             </div>
@@ -375,6 +375,8 @@
     
     <!-- Global Init -->
     <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'ticket_event_listing.js' %}"></script>
+    
 
   </body>
 

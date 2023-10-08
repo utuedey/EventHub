@@ -66,9 +66,9 @@
                         <ul class="nav">
                             <li><a href="{% url 'users:dashboard' %}" class="active">Home</a></li>
                             <li><a href="{% url 'about' %}">About Us</a></li>
-                            <li><a href="{% url 'rent-venue' %}">Rent Venue</a></li>
+                            <li><a href="{ url 'rent-venue' }">Rent Venue</a></li>
                             <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
-                            <li><a href="{% url 'ticket' %}">Tickets</a></li>
+                            <li><a href="{% url 'ticket-list' %}">Tickets</a></li>
                             <li><a href="{% url 'users:signup' %}">Login</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -103,7 +103,7 @@
                         <h6>Opening on Thursday, March 31st</h6>
                         <h2>EventHub Opening Festival 2022</h2>
                         <div class="main-white-button">
-                            <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                            <a href="{% url 'ticket-list' %}">Purchase Tickets</a>
                         </div>
                     </div>
                 </div>
@@ -119,28 +119,28 @@
                 <div class="col-lg-12">
                     <div class="owl-show-events owl-carousel">
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-01.jpg" alt=""></a>
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-01.jpg" alt=""></a>
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-02.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-02.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-03.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-03.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-04.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-04.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-01.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-01.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-02.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-02.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="static/assets/images/show-events-03.jpg" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="static/assets/images/show-events-03.jpg" alt=""></a> 
                         </div>
                         <div class="item">
-                            <a href="{% url 'event-detail' %}"><img src="{% static 'assets/images/show-events-04.jpg' %}" alt=""></a> 
+                            <a href="{url 'event-detail' }"><img src="{% static 'assets/images/show-events-04.jpg' %}" alt=""></a> 
                         </div>
                     </div>
                 </div>
@@ -158,8 +158,8 @@
                         <h4>Three Amazing Venues for events</h4>
                         <p>EventHub is an event management system brought to you by a team of four developers. The site has 7 Pages. 
                         These are <a href="{% url 'users:dashboard' %}">Homepage</a>, <a href="{% url 'about' %}">About</a>, 
-                        <a href="{% url 'rent-venue' %}">Rent a venue</a>, <a href="{% url 'event-list' %}">shows &amp; events</a>, 
-                        <a href="{% url 'event-detail' %}">event details</a>, <a href="{% url 'ticket' %}">tickets</a>, and <a href="{% url 'ticket-detail' %}">ticket details</a>. 
+                        <a href="{ url 'rent-venue' }">Rent a venue</a>, <a href="{% url 'event-list' %}">shows &amp; events</a>, 
+                        <a href="{url 'event-detail' }">event details</a>, <a href="{% url 'ticket-list' %}">tickets</a>, and <a href="{ url 'ticket-detail' }">ticket details</a>. 
                          If you have any question, please visit our <a href="{% url 'contact' %}" target="_blank">Contact page</a>.</p>
                         <br>
                         <p>You can register for any educational, technological, sports, food or business events. you may visit <a href="#" target="_blank">Show events</a> page to see the great collection of events in different categories.</p>
@@ -200,7 +200,7 @@
                         <div class="down-content">
                             <div class="left-content">
                                 <div class="main-white-button">
-                                    <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                    <a href="{ url 'ticket-detail' }">Purchase Tickets</a>
                                 </div>
                             </div>
                             <div class="right-content">
@@ -225,7 +225,7 @@
                         <div class="down-content">
                             <div class="left-content">
                                 <div class="main-white-button">
-                                    <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                    <a href="{ url 'ticket-detail' }">Purchase Tickets</a>
                                 </div>
                             </div>
                             <div class="right-content">
@@ -250,7 +250,7 @@
                         <div class="down-content">
                             <div class="left-content">
                                 <div class="main-white-button">
-                                    <a href="{% url 'ticket-detail' %}">Purchase Tickets</a>
+                                    <a href="{ url 'ticket-detail' }">Purchase Tickets</a>
                                 </div>
                             </div>
                             <div class="right-content">
@@ -284,10 +284,10 @@
                 <div class="col-lg-4">
                     <div class="event-item">
                         <div class="thumb">
-                            <a href="{% url 'event-detail' %}"><img src="{% static 'assets/images/event-01.jpg' %}" alt=""></a>
+                            <a href="{url 'event-detail' }"><img src="{% static 'assets/images/event-01.jpg' %}" alt=""></a>
                         </div>
                         <div class="down-content">
-                            <a href="{% url 'event-detail' %}"><h4>Radio City Musical Hall</h4></a>
+                            <a href="{url 'event-detail' }"><h4>Radio City Musical Hall</h4></a>
                             <ul>
                                 <li><i class="fa fa-clock-o"></i> Tuesday: 15:30-19:30</li>
                                 <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
@@ -298,10 +298,10 @@
                 <div class="col-lg-4">
                     <div class="event-item">
                         <div class="thumb">
-                            <a href="{% url 'event-detail' %}"><img src="{% static 'assets/images/event-02.jpg' %}" alt=""></a>
+                            <a href="{url 'event-detail' }"><img src="{% static 'assets/images/event-02.jpg' %}" alt=""></a>
                         </div>
                         <div class="down-content">
-                            <a href="{% url 'event-detail' %}"><h4>Madison Square Garden</h4></a>
+                            <a href="{url 'event-detail' }"><h4>Madison Square Garden</h4></a>
                             <ul>
                                 <li><i class="fa fa-clock-o"></i> Wednesday: 08:00-14:00</li>
                                 <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
@@ -312,10 +312,10 @@
                 <div class="col-lg-4">
                     <div class="event-item">
                         <div class="thumb">
-                            <a href="{% url 'event-detail' %}"><img src="{% static 'assets/images/event-03.jpg' %}" alt=""></a>
+                            <a href="{url 'event-detail' }"><img src="{% static 'assets/images/event-03.jpg' %}" alt=""></a>
                         </div>
                         <div class="down-content">
-                            <a href="{% url 'event-detail' %}"><h4>Royce Hall</h4></a>
+                            <a href="{url 'event-detail' }"><h4>Royce Hall</h4></a>
                             <ul>
                                 <li><i class="fa fa-clock-o"></i> Thursday: 09:00-23:00</li>
                                 <li><i class="fa fa-map-marker"></i> Copacabana Beach, Rio de Janeiro</li>
@@ -412,9 +412,9 @@
                                     <ul>
                                         <li><a href="{% url 'users:dashboard' %}" class="active">Home</a></li>
                                         <li><a href="{% url 'about' %}">About Us</a></li>
-                                        <li><a href="{% url 'rent-venue' %}">Rent Venue</a></li>
+                                        <li><a href="{ url 'rent-venue' }">Rent Venue</a></li>
                                         <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
-                                        <li><a href="{% url 'ticket' %}">Tickets</a></li> 
+                                        <li><a href="{% url 'ticket-list' %}">Tickets</a></li> 
                                     </ul>
                                 </div>
                             </div>
@@ -442,14 +442,15 @@
     <script src="static/assets/js/popper.js"></script>
     <script src="static/assets/js/bootstrap.min.js"></script>
 
+
     <!-- Plugins -->
-    <script src="static/assets/js/scrollreveal.min.js"></script>
-    <script src="static/assets/js/waypoints.min.js"></script>
-    <script src="static/assets/js/jquery.counterup.min.js"></script>
-    <script src="static/assets/js/imgfix.min.js"></script> 
-    <script src="static/assets/js/mixitup.js"></script> 
-    <script src="static/assets/js/accordions.js"></script>
-    <script src="static/assets/js/owl-carousel.js"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script> 
+    <script src="{% static 'assets/js/mixitup.js' %}"></script> 
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
     
     <!-- Global Init -->
     <script src="static/assets/js/custom.js"></script>

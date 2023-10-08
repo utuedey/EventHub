@@ -68,9 +68,9 @@
                         <ul class="nav">
                             <li><a href="{% url 'users:dashboard' %}">Home</a></li>
                             <li><a href="{% url 'about' %}" class="active">About Us</a></li>
-                            <li><a href="{% url 'add-event' %}">Rent Venue</a></li>
+                            <li><a href="{ url 'add-event' }">Rent Venue</a></li>
                             <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
-                            <li><a href="{% url 'ticket' %}">Tickets</a></li> 
+                            <li><a href="{% url 'ticket-list' %}">Tickets</a></li> 
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -100,13 +100,13 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="left-image">
-                        <img src="assets/images/about-image.jpg" alt="party time">
+                        <img src="{% static 'assets/images/about-image.jpg' %}" alt="party time">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="right-content">
                         <div class="about-map-image">
-                            <img src="assets/images/about-map-image.jpg" alt="party location">
+                            <img src="{% static 'assets/images/about-map-image.jpg' %}" alt="party location">
                         </div>
                         <div class="down-content">
                             <h4>Radio City Musical Hall</h4>
@@ -197,7 +197,7 @@
                 <div class="col-lg-4">
                     <div class="like-item">
                         <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/like-01.jpg" alt=""></a>
+                            <a href="event-details.html"><img src="{% static 'assets/images/like-01.jpg' %}" alt=""></a>
                             <div class="icons">
                                 <ul>
                                     <li><a href="event-details.html"><i class="fa fa-arrow-right"></i></a></li>
@@ -214,7 +214,7 @@
                 <div class="col-lg-4">
                     <div class="like-item">
                         <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/like-02.jpg" alt=""></a>
+                            <a href="event-details.html"><img src="{% static 'assets/images/like-02.jpg' %}" alt=""></a>
                             <div class="icons">
                                 <ul>
                                     <li><a href="event-details.html"><i class="fa fa-arrow-right"></i></a></li>
@@ -231,7 +231,7 @@
                 <div class="col-lg-4">
                     <div class="like-item">
                         <div class="thumb">
-                            <a href="event-details.html"><img src="assets/images/like-03.jpg" alt=""></a>
+                            <a href="event-details.html"><img src="{% static 'assets/images/like-03.jpg' %}" alt=""></a>
                             <div class="icons">
                                 <ul>
                                     <li><a href="event-details.html"><i class="fa fa-arrow-right"></i></a></li>
@@ -334,9 +334,9 @@
                                     <ul>
                                         <li><a href="{% url 'users:dashboard' %}" class="active">Home</a></li>
                                         <li><a href="{% url 'about' %}">About Us</a></li>
-                                        <li><a href="{% url 'add-event' %}">Rent Venue</a></li>
+                                        <li><a href="{ url 'add-event' }">Rent Venue</a></li>
                                         <li><a href="{% url 'event-list' %}">Shows & Events</a></li> 
-                                        <li><a href="{% url 'ticket' %}">Tickets</a></li> 
+                                        <li><a href="{% url 'ticket-list' %}">Tickets</a></li> 
                                     </ul>
                                 </div>
                             </div>

@@ -343,7 +343,7 @@ nav a {
 .register-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #96a0ac;
     color: #fff;
     text-decoration: none;
     align-self: center;
@@ -354,7 +354,7 @@ nav a {
 }
 
 .register-button:hover {
-    background-color: #0056b3;
+    background-color: #919ba5;
 }
 
 #event-image-img {

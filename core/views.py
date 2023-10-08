@@ -13,12 +13,17 @@ from .serializers import (
     LocationSerializer,
     CategorySerializer
 )
+class IndexView(TemplateView):
+    template_name = 'event_hub/index.html'
 
 class HomeView(TemplateView):
-    template_name = 'core/homepage.html'
+    template_name = 'event_hub/event_list.html' #'core/homepage.html'
 
 class EventDetailView(TemplateView):
-    template_name = 'core/event_datail.html'
+    template_name = 'core/event_details.html'
+
+class TicketListView(TemplateView):
+    template_name = 'event_hub/ticket_list.html'
 
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()

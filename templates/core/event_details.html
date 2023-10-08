@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <title>EventHub | Shows and Events Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/eventhub.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Pre HEader ***** -->
+    <div class="pre-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <span>Hey! The Show Is Starting In 5 Days.</span>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="text-button">
+                        <a href="{% url 'contact' %}">Contact Us Now! <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url 'users:dashboard' %}" class="logo">Event<em>Hub</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="{% url 'users:dashboard' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{url 'rent-venue' }">Rent Venue</a></li>
+                            <li><a href="{% url 'home' %}" class="active">Shows & Events</a></li>
+                            <li><a href="{% url 'ticket-list' %}">Tickets</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="datail-view-main">
+        <section class="event-detail">
+            <!-- Event details -->
+            <div class="event-image">
+                <img id="event-image-img" src="https://via.placeholder.com/150" alt="Event Image">
+            </div>
+            <div id="event-detail-items">
+                <h2 id="event-title" class="event-detail-item">Loading...</h2>
+                <p id="event-description" class="event-detail-item">Loading...</p>
+                <hr>
+                <p id="location">Location</p>
+                <p id="event-location" class="event-detail-item">Loading...</p>
+                <hr>
+                <p id="event-date" class="event-detail-item">Loading...</p>
+                <hr>
+                <div id="price">
+                    <p id="event-price" class="event-detail-item">Loading...</p>
+                    <p id="fee-label">Ticket Fee</p>
+                </div>
+                <hr>
+                <a href="/event-registration" class="register-button">RSVP</a>
+            </div>
+        </section>
+    </main>
+    
+
+       <!-- jQuery -->
+       <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+       <!-- Bootstrap -->
+       <script src="{% static 'assets/js/popper.js' %}"></script>
+       <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+   
+       <!-- Plugins -->
+       <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+       <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+       <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+       <script src="{% static 'assets/js/imgfix.min.js' %}"></script> 
+       <script src="{% static 'assets/js/mixitup.js' %}"></script> 
+       <script src="{% static 'assets/js/accordions.js' %}"></script>
+       <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+       
+       <!-- Global Init -->
+       <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'event_detail.js' %}"></script>
+</body>
+
+</html>
